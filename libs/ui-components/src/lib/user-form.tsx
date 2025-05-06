@@ -13,6 +13,7 @@ const userSchema = z.object({
 });
 
 type UserFormData = z.infer<typeof userSchema>;
+const defaultValues: UserFormData = { name: '', email: '', age: '' };
 
 export function UserForm() {
   const {
@@ -22,11 +23,11 @@ export function UserForm() {
     reset,
   } = useForm<UserFormData>({
     resolver: zodResolver(userSchema),
+    defaultValues,
   });
 
   const onSubmit = (data: UserFormData) => {
-    console.log('Form Data:', data);
-    toast(`Hello ${data.name}`);
+    toast.success(`Hello ${data.name}`);
     reset();
   };
 
@@ -35,19 +36,23 @@ export function UserForm() {
       <div>
         <label className="block font-medium leading-relaxed">Name</label>
         <input {...register('name')} className="input input-info" />
-        {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+        {errors.name && (
+          <p className="text-red-500 text-sm leading-relaxed">{errors.name.message}</p>
+        )}
       </div>
 
       <div>
         <label className="block font-medium leading-relaxed">Email</label>
         <input {...register('email')} type="email" className="input input-info" />
-        {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+        {errors.email && (
+          <p className="text-red-500 text-sm leading-relaxed">{errors.email.message}</p>
+        )}
       </div>
 
       <div>
         <label className="block font-medium leading-relaxed">Age (optional)</label>
         <input {...register('age')} type="text" className="input input-info" />
-        {errors.age && <p className="text-red-500 text-sm">{errors.age.message}</p>}
+        {errors.age && <p className="text-red-500 text-sm leading-relaxed">{errors.age.message}</p>}
       </div>
 
       <button type="submit" className="btn btn-info">

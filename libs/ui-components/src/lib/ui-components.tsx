@@ -14,9 +14,9 @@ export function UiComponents(props: ITest) {
         onClick={() => {
           toast.success(`Welcome ${envValue}`);
         }}
-        className="btn btn-success"
+        className="btn btn-info"
       >
-        Click Me
+        Toast Container 2
       </button>
     </>
   );

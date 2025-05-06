@@ -26,7 +26,7 @@ export default function Index() {
         }}
         className="btn btn-soft btn-primary"
       >
-        Click Me
+        Toast Container 1
       </button>
 
       <ExampleComps />
