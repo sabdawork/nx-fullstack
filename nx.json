@@ -100,6 +100,16 @@
         }
       },
       "exclude": ["libs/squaremetre-types/*"]
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": ["libs/squaremetre-types2/*"],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      },
+      "exclude": ["libs/squaremetre-types2/*"]
     }
   ],
   "generators": {
