@@ -58,6 +58,7 @@
     "nx": "21.0.0",
     "postcss": "8.4.38",
     "prettier": "^2.6.2",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "4.1.5",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
@@ -78,7 +79,6 @@
     "next": "~15.2.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-toastify": "^11.0.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0"
   },
