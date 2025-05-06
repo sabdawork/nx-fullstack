@@ -1,4 +1,8 @@
+'use client';
+
 import ExampleComps from '@/components/example';
+import { UserForm } from '@geonet-v3/ui-components';
+import { toast } from 'react-toastify';
 
 export default function Index() {
   /*
@@ -16,7 +20,17 @@ export default function Index() {
         Welcome @geonet-v3/gp-website
       </h1>
 
+      <button
+        onClick={() => {
+          toast.success(`Welcome ${envValue}`);
+        }}
+        className="btn btn-soft btn-primary"
+      >
+        Click Me
+      </button>
+
       <ExampleComps />
+      <UserForm />
     </div>
   );
 }

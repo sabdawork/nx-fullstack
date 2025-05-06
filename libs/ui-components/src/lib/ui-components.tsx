@@ -1,6 +1,6 @@
 'use client';
 
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { ITest } from '@geonet-v3/squaremetre-types';
 
 export function UiComponents(props: ITest) {
@@ -18,8 +18,6 @@ export function UiComponents(props: ITest) {
       >
         Click Me
       </button>
-
-      <ToastContainer theme="light" autoClose={5000} />
     </>
   );
 }
