@@ -1,0 +1,39 @@
+{
+  "name": "@geonet-v3/squaremetre-types",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/squaremetre-types/dist",
+          "tsConfig": "libs/squaremetre-types/tsconfig.lib.json",
+          "packageJson": "libs/squaremetre-types/package.json",
+          "main": "libs/squaremetre-types/src/index.ts",
+          "assets": [
+            "libs/squaremetre-types/*.md"
+          ]
+        }
+      }
+    }
+  }
+}

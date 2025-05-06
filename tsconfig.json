@@ -2,5 +2,18 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/gp-website"
+    },
+    {
+      "path": "./libs/ui-components"
+    },
+    {
+      "path": "./apps/squaremetre-api"
+    },
+    {
+      "path": "./libs/squaremetre-types"
+    }
+  ]
 }
