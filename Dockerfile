@@ -27,10 +27,12 @@ RUN pnpx nx build squaremetre-api --configuration=production
 FROM node:22-alpine AS deploy
 
 WORKDIR /app
-COPY --from=build /app/apps/squaremetre-api ./apps/squaremetre-api
-COPY --from=build /app/libs/squaremetre-types ./libs/squaremetre-types
+COPY --from=build /app/apps/squaremetre-api/dist ./dist
 COPY --from=build /app/node_modules ./node_modules
 COPY package.json ./
 
+RUN rm -rf ./node_modules/@geonet-v3/squaremetre-types
+COPY --from=build /app/dist/libs/squaremetre-types ./node_modules/@geonet-v3/squaremetre-types
+
 EXPOSE 8002
-CMD ["node", "apps/squaremetre-api/dist/main"]
+CMD ["node", "dist/main"]
