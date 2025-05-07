@@ -21,16 +21,15 @@ WORKDIR /app
 COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
 
-RUN pnpx nx build squaremetre-api
+RUN pnpx nx build squaremetre-api --configuration=production
 
 # ---- Production stage ----
 FROM node:22-alpine AS deploy
 
 WORKDIR /app
 COPY --from=build /app/apps/squaremetre-api/dist ./apps/squaremetre-api/dist
-COPY --from=build /app/libs/squaremetre-types/dist ./libs/squaremetre-types/dist
+COPY --from=build /app/libs/squaremetre-types ./libs/squaremetre-types
 COPY --from=build /app/node_modules ./node_modules
-RUN ls node_modules
 COPY package.json ./
 
 EXPOSE 8000

@@ -50,3 +50,5 @@ vitest.config.*.timestamp*
 .env
 
 test-output
+private
+
