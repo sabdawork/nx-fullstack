@@ -7,6 +7,6 @@ export class AppService {
   getData(): { message: string } {
     console.log(this.firebaseService.firebaseKey());
 
-    return { message: 'Hello API' };
+    return { message: 'Hello API (Update by CI/CD)' };
   }
 }
