@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  squaremetre-api:
+    container_name: squaremetre-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8002:8002'
+    env_file:
+      - apps/squaremetre-api/.env
+    restart: unless-stopped

@@ -27,10 +27,10 @@ RUN pnpx nx build squaremetre-api --configuration=production
 FROM node:22-alpine AS deploy
 
 WORKDIR /app
-COPY --from=build /app/apps/squaremetre-api/dist ./apps/squaremetre-api/dist
+COPY --from=build /app/apps/squaremetre-api ./apps/squaremetre-api
 COPY --from=build /app/libs/squaremetre-types ./libs/squaremetre-types
 COPY --from=build /app/node_modules ./node_modules
 COPY package.json ./
 
-EXPOSE 8000
+EXPOSE 8002
 CMD ["node", "apps/squaremetre-api/dist/main"]
