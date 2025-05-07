@@ -12,3 +12,5 @@ src/**/*.spec.ts
 .vscode
 tmp
 .nx
+.github
+
